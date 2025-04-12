@@ -101,11 +101,14 @@ function App() {
       style={{
         display: "flex",
         justifyContent: "center",
-        alignItems: "center",
+        alignItems: "flex-start",
         minHeight: "100vh",
         backgroundColor: "#f4f6f9",
         padding: "20px",
         fontFamily: "'Arial', sans-serif",
+        overflowX: "hidden", // ✅ prevent horizontal scroll from JS side
+        boxSizing: "border-box",
+        width: "100vw", // ✅ force it to viewport width
       }}
     >
       <div
@@ -143,9 +146,10 @@ function App() {
               value={slide.heading}
               onChange={(e) => handleChange(index, "heading", e.target.value)}
               style={{
-                width: "100%",
+                width: "98%",
                 padding: "10px",
                 marginBottom: "8px",
+                marginRight: "10px",
                 borderRadius: "5px",
                 border: "1px solid #ddd",
                 fontSize: "16px",
@@ -240,7 +244,7 @@ function App() {
               value={slide.content}
               onChange={(e) => handleChange(index, "content", e.target.value)}
               style={{
-                width: "100%",
+                width: "98%",
                 marginBottom: "8px",
                 padding: "10px",
                 borderRadius: "5px",
